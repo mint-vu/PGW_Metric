@@ -25,3 +25,14 @@ interpolation/noise_p1_5_point_cloud_1000.npy
 interpolation/noise_p1_10_point_cloud_1000.npy
 interpolation/noise_p2_5_point_cloud_1000.npy
 interpolation/noise_p2_10_point_cloud_1000.npy
+interpolation/result/gw_01_p1_5_1000.pt
+interpolation/result/gw_01_p1_10_1000.pt
+interpolation/result/gw01_p1_5_1000.pt
+interpolation/result/gw01_p1_10_1000.pt
+interpolation/result/gw01_p2_5_1000.pt
+interpolation/result/gw01_p2_10_1000.pt
+interpolation/result/pgw_01_p1_5_1000.pt
+interpolation/result/pgw_01_p1_10_1000.pt
+interpolation/result/pgw01_p1_5_1000.pt
+interpolation/result/pgw01_p1_10_1000.pt
+interpolation/result/pgw01_p2_5_1000.pt

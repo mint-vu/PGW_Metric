@@ -252,10 +252,12 @@ def partial_gromov_wasserstein(
 
     if G0 is None:
         G0 = np.outer(p, q) * m / (np.sum(p) * np.sum(q))
-
-    dim_G_extended = (len(p) + nb_dummies, len(q) + nb_dummies)
+    
+    n1,n2=p.shape[0],q.shape[0]
+    #dim_G_extended = (n1 + nb_dummies, n2 + nb_dummies)
     q_extended = np.append(q, [(np.sum(p) - m) / nb_dummies] * nb_dummies)
     p_extended = np.append(p, [(np.sum(q) - m) / nb_dummies] * nb_dummies)
+    M_emd = np.zeros((n1+nb_dummies,n2+nb_dummies))
 
     cpt = 0
     err = 1
@@ -268,10 +270,10 @@ def partial_gromov_wasserstein(
         Gprev = np.copy(G0)
 
         M = gwgrad_partial(C1, C2, G0)
-        M_emd = np.zeros(dim_G_extended)
-        M_emd[: len(p), : len(q)] = M
-        M_emd[-nb_dummies:, -nb_dummies:] = np.max(M) * 1e2
-        M_emd = np.asarray(M_emd, dtype=np.float64)
+       
+        M_emd[:n1, :n2] = M
+        M_emd[-nb_dummies:, -nb_dummies:] = np.max(M) * 2
+        #M_emd = np.asarray(M_emd, dtype=np.float64)
         # M_emd[-1,-1]+=1
 
         Gc, logemd = emd(

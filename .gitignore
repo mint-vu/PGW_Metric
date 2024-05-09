@@ -5,3 +5,6 @@ __pycache__/
 data/
 .DS_Store
 interpolation/result/pgw_01.pt
+interpolation/pgw_01_1000.pt
+interpolation/result/gw_01_0_1000.pt
+interpolation/result/pgw_01_0_1000.pt

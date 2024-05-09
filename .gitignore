@@ -8,3 +8,15 @@ interpolation/result/pgw_01.pt
 interpolation/pgw_01_1000.pt
 interpolation/result/gw_01_0_1000.pt
 interpolation/result/pgw_01_0_1000.pt
+interpolation/noise_p0_point_cloud_500.npy
+interpolation/noise_p0_point_cloud_1000.npy
+interpolation/noise_p5_point_cloud_500.npy
+interpolation/noise_p5_point_cloud_1000.npy
+interpolation/noise_p10_point_cloud_500.npy
+interpolation/noise_p10_point_cloud_1000.npy
+interpolation/noise_u0_point_cloud_1000.npy
+interpolation/noise_u0_point_cloud_2000.npy
+interpolation/noise_u5_point_cloud_1000.npy
+interpolation/noise_u5_point_cloud_2000.npy
+interpolation/noise_u10_point_cloud_1000.npy
+interpolation/noise_u10_point_cloud_2000.npy

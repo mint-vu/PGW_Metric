@@ -20,3 +20,8 @@ interpolation/noise_u5_point_cloud_1000.npy
 interpolation/noise_u5_point_cloud_2000.npy
 interpolation/noise_u10_point_cloud_1000.npy
 interpolation/noise_u10_point_cloud_2000.npy
+interpolation/noise_0_point_cloud_1000.npy
+interpolation/noise_p1_5_point_cloud_1000.npy
+interpolation/noise_p1_10_point_cloud_1000.npy
+interpolation/noise_p2_5_point_cloud_1000.npy
+interpolation/noise_p2_10_point_cloud_1000.npy

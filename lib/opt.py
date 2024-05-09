@@ -86,6 +86,7 @@ def emd_lp(
     center_dual=True,
     numThreads=1,
     check_marginals=True,
+    
 ):
     r"""Solves the Earth Movers distance problem and returns the OT matrix
 

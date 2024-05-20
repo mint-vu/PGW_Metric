@@ -62,3 +62,4 @@ interpolation/result/pgw01_p2_10_1024.pt
 interpolation/result/pgw01_u_5_1024.pt
 interpolation/result/pgw01_u_10_1024.pt
 2d_shape_matching/result/gammas.pt
+shape_retrieval/subset_data/

@@ -710,7 +710,8 @@ def partial_gromov_ver1(
     #                      " equal than min(|a|_1, |b|_1).")
 
     if G0 is None:
-        G0 = np.outer(p, q)*min(np.sum(p),np.sum(q))/(np.sum(p)*np.sum(q))
+        G0 = np.outer(p, q)*np.min((np.sum(p),np.sum(q)))/(np.sum(p)*np.sum(q))
+    #print('G0 sum is',np.sum(G0))
 
     cpt = 0
     err = 1

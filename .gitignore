@@ -90,3 +90,7 @@ shape_matching/result/gammas_graph.pt
 shape_matching/result/gammas.npz
 shape_matching/result/gammas.pt
 result/alg/time_list.pt
+interpolation/result/01_p1_5_1024.npz
+interpolation/result/01_p1_10_1024.npz
+interpolation/result/01_p2_5_1024.npz
+interpolation/result/01_p2_10_1024.npz

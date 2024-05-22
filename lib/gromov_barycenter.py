@@ -528,9 +528,8 @@ def pgw_barycenters(
 
         
     if Lambda_list is None:
-        c_max_list=[np.max(C), for C is Cs]
-        c_max=max(c_max_list)
-        Lambda_list=np.full(S,c_max)
+        c_max=[np.max(C) for C in Cs]
+        Lambda_list=np.array(c_max)
         
 
     if stop_criterion == 'barycenter':
@@ -556,6 +555,10 @@ def pgw_barycenters(
                 C, Cs[s], p, ps[s], Lambda_list[s], G0=None,
                 numItermax_gw=max_iter, tol=1e-5, log=inner_log, verbose=verbose, **kwargs)
                 for s in range(S)]
+        
+        # print('p mass is', p.sum())
+        # print('mass in first',res[0].sum())
+        # print('mass in second',res[1].sum())
        
         T = res
         # else:
@@ -590,6 +593,7 @@ def pgw_barycenters(
         return C, log_
     else:
         return C
+    
 
     
 def mpgw_barycenters(

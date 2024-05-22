@@ -94,3 +94,5 @@ interpolation/result/01_p1_5_1024.npz
 interpolation/result/01_p1_10_1024.npz
 interpolation/result/01_p2_5_1024.npz
 interpolation/result/01_p2_10_1024.npz
+interpolation/result/01_u_5_1024.npz
+interpolation/result/01_u_10_1024.npz

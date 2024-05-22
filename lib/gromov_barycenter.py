@@ -29,7 +29,6 @@ from ot.optim import cg, line_search_armijo, solve_1d_linesearch_quad
 from ot.utils import check_random_state, unif
 from ot.backend import get_backend, NumpyBackend
 
-print('load_package')
 
 def smacof_mds(C, dim, max_iter=3000, eps=1e-9):
     """

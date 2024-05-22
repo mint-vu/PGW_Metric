@@ -122,7 +122,7 @@ def arange(start, end):
         L[i] = i + start
     return L
 
-
+# This function is adapted from PythonOT 
 # @nb.njit(['float32[:](float32[:],float32[:],float32[:])','float64[:](float64[:],float64[:],float64[:])'],fastmath=True)
 def quantile_function(qs, mu_com, mu_values):
     n0 = mu_com.shape[0]
@@ -178,7 +178,7 @@ def C12_func(Gamma, fC12):
     )
     return C_12
 
-
+# This function is adapted from PythonOT 
 @nb.njit()
 def tensor_dot_param(C1, C2, loss="square_loss"):
     if loss == "square_loss":
@@ -280,6 +280,7 @@ def gw_variant_loss(fC1, fC2, hC1, hC2, Gamma_hat, Lambda):
     return loss
 
 
+# This function is adapted from PythonOT 
 @nb.njit()
 def linesearch_quad(a, b):
     r"""
@@ -314,7 +315,7 @@ def linesearch_quad(a, b):
             minimizer = 0.0
     return minimizer
 
-
+# This function is adapted from PythonOT 
 @nb.njit()
 def solve_gromov_linesearch(
     G, deltaG, cost_G, C1, C2, M, reg, alpha_min=None, alpha_max=None, nx=None, **kwargs
@@ -408,6 +409,8 @@ def pgw_linesearch(Gamma, deltaGamma, cost_G, fC1, fC2, hC1, hC2, Lambda):
     return alpha, 1, cost_G
 
 
+
+# This function is adapted from PythonOT 
 def generic_conditional_gradient(
     a,
     b,
@@ -683,10 +686,6 @@ def gromov_partial_wasserstein_v1(
     np_ = NumpyBackend()
 
     fC1, fC2, hC1, hC2 = tensor_dot_param(C1, C2)
-    # print('fC1',fC1)
-    # print('fC2',fC2)
-    # print('hC1',hC1)
-    # print('hC2',hC2)
     tensor_dot = tensor_dot_func(fC1, fC2, hC1, hC2, G0, Lambda)
     # print('initial tensor_dot',tensor_dot)
 

@@ -106,6 +106,7 @@ def normalize_X(X):
 #     return embedding_list_all,label_list_all
 
 
+# This function is adapted from "Partial Gromov-Wasserstein with applications on Positive-Unlabeled Learning" repo 
 # it is modified version
 def draw_pu_dataset_scar(
     dataset_p,
@@ -210,7 +211,7 @@ def gamma_to_l(G, r):
     l_G[G_2 >= quantile] = 1
     return l_G
 
-
+#This function is adapted from repo "unbalanced_gromov_wasserstein"
 def init_param_ugw(C1, C2):
     n, m = C1.shape[0], C2.shape[0]
     n_pos, n_unl = n, m
@@ -228,6 +229,7 @@ def init_param_ugw(C1, C2):
     return mu, nu, eps, rho, rho2, Cx, Cy
 
 
+#This function is adapted from repo "unbalanced_gromov_wasserstein"
 def init_flb_uot(C1, C2):
     mu, nu, eps, rho, rho2, Cx, Cy = init_param_ugw(C1, C2)
     _, _, init_plan = compute_batch_flb_plan(
@@ -244,7 +246,7 @@ def init_flb_uot(C1, C2):
 
     return init_plan[0].numpy().astype(np.float64)
 
-
+#This function is adapted from repo "Partial Gromov-Wasserstein with applications on Positive-Unlabeled Learning" 
 def init_flb_pot(C1, C2, p, q, r, Lambda=30.0, n=100):
     p, q, mass = init_pgw_param(C1, C2, r)
     S1, S2 = C1.mean(0), C2.mean(0)

@@ -15,6 +15,7 @@ from ot.lp import emd
 import warnings
 
 
+# This function is adapted from PythonOT package
 @nb.njit()
 def gwgrad_partial(C1, C2, T):
     """Compute the GW gradient. Note: we can not use the trick in :ref:`[12] <references-gwgrad-partial>`
@@ -52,6 +53,7 @@ def gwgrad_partial(C1, C2, T):
     return tens * 2
 
 
+# This function is adapted from PythonOT package
 @nb.njit()
 def gwloss_partial(C1, C2, T):
     """Compute the GW loss.
@@ -75,6 +77,7 @@ def gwloss_partial(C1, C2, T):
     return np.sum(g * T)
 
 
+# This function is adapted from PythonOT package
 def partial_gromov_wasserstein(
     C1,
     C2,
@@ -304,6 +307,7 @@ def cost_matrix_d(X, Y):
     return M
 
 
+
 @nb.njit(cache=True)
 def tensor_dot_ori(M, Gamma):
     n, m = Gamma.shape
@@ -340,7 +344,7 @@ def C12_func(Gamma, fC12):
     return C_12
 
 
-# @nb.njit(cache=True)
+# This function is adapted from PythonOT package
 def tensor_dot_param(C1, C2, loss="square_loss"):
     if loss == "square_loss":
 

@@ -30,8 +30,19 @@ from ot.utils import check_random_state, unif
 from ot.backend import get_backend, NumpyBackend
 
 
-def smacof_mds(C, dim, max_iter=3000, eps=1e-9):
+
+
+
+
+# It is referenced from PythonOT (https://pythonot.github.io/)
+def im2mat(img):
+    """Converts and image to matrix (one pixel per line)"""
+    return img.reshape((img.shape[0] * img.shape[1], img.shape[2]))
+
+# It is adapted from PythonOT (https://pythonot.github.io/)
+def smacof_mds(C, dim, max_iter=3000, eps=1e-9,seed=3):
     """
+    It is imported from PythonOT
     Returns an interpolated point cloud following the dissimilarity matrix C
     using SMACOF multidimensional scaling (MDS) in specific dimensioned
     target space
@@ -54,14 +65,15 @@ def smacof_mds(C, dim, max_iter=3000, eps=1e-9):
            one isometry)
     """
 
-   #rng = np.random.RandomState(seed=3)
+    rng = np.random.RandomState(seed=seed)
 
     mds = manifold.MDS(
         dim,
         max_iter=max_iter,
         eps=1e-9,
         dissimilarity='precomputed',
-        n_init=1)
+        n_init=1,
+        normalized_stress='auto')
     pos = mds.fit(C).embedding_
 
     nmds = manifold.MDS(
@@ -69,14 +81,35 @@ def smacof_mds(C, dim, max_iter=3000, eps=1e-9):
         max_iter=max_iter,
         eps=1e-9,
         dissimilarity="precomputed",
-        random_state=seed,
+        random_state=rng,
+        normalized_stress='auto',
         n_init=1)
     npos = nmds.fit_transform(C, init=pos)
 
+
     return npos
 
+from sklearn.manifold import MDS
 
 
+def MDS_test(dist_mat, d,seed=0):
+    mds = MDS(n_components=d, dissimilarity='precomputed',random_state=seed, normalized_stress='auto')
+    lower_dimensional_points = mds.fit_transform(dist_mat)
+    return lower_dimensional_points
+
+def rotation_2d(theta=0):
+    return np.array([[np.cos(theta), -np.sin(theta)],
+                    [np.sin(theta), np.cos(theta)]
+    ])
+
+clf=PCA(n_components=2)
+
+
+
+
+
+
+# It is referenced from PythonOT (https://pythonot.github.io/)
 def gromov_barycenters(
         N, Cs, ps=None, p=None, lambdas=None, loss_fun='square_loss',
         symmetric=True, armijo=False, max_iter=1000, tol=1e-9,
@@ -251,7 +284,8 @@ def gromov_barycenters(
     else:
         return C
 
-    
+
+# This function is referenced from PythonOT
 def update_square_loss(p, lambdas, T, Cs, nx=None):
     r"""
     Updates :math:`\mathbf{C}` according to the L2 Loss kernel with the `S`

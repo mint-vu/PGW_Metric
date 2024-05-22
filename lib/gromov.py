@@ -18,7 +18,7 @@ from ot.partial import gwgrad_partial, gwloss_partial
 
 import warnings
 
-
+# This function is adapted from PythonOT package
 @nb.njit(cache=True)
 def tensor_dot_param(C1, C2, Lambda=0, loss="square_loss"):
     if loss == "square_loss":
@@ -57,7 +57,7 @@ def tensor_dot_func(fC1, fC2, hC1, hC2, Gamma):
     tensor_dot = (C1 + C2) - hC1.dot(Gamma).dot(hC2.T)
     return tensor_dot
 
-
+# This function is adapted from PythonOT package
 # @nb.njit(cache=True)
 def gwgrad_partial1(C1, C2, T, loss="square"):
     """Compute the GW gradient. Note: we can not use the trick in :ref:`[12] <references-gwgrad-partial>`
@@ -101,6 +101,7 @@ def gwgrad_partial1(C1, C2, T, loss="square"):
     return tens
 
 
+# This function is adapted from PythonOT package
 @nb.njit(cache=True)
 def gwloss_partial1(C1, C2, T):
     """Compute the GW loss.
@@ -123,7 +124,7 @@ def gwloss_partial1(C1, C2, T):
     g = gwgrad_partial1(C1, C2, T) * 0.5
     return np.sum(g * T)
 
-
+# This function is adapted from PythonOT package
 def partial_gromov_wasserstein(
     C1,
     C2,
@@ -336,6 +337,7 @@ def partial_gromov_wasserstein(
         return G0[: len(p), : len(q)]  # ,iter_num
 
 
+# This function is adapted from PythonOT package
 def gromov_wasserstein(
     C1,
     C2,

@@ -11,6 +11,7 @@ import warnings
 import time
 from ot.backend import get_backend, NumpyBackend
 from ot.lp import emd
+#print('load package')
 
 
 from ot.partial import gwgrad_partial, gwloss_partial
@@ -709,7 +710,7 @@ def partial_gromov_ver1(
     #                      " equal than min(|a|_1, |b|_1).")
 
     if G0 is None:
-        G0 = np.outer(p, q)
+        G0 = np.outer(p, q)*min(np.sum(p),np.sum(q))/(np.sum(p)*np.sum(q))
 
     cpt = 0
     err = 1

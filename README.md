@@ -16,8 +16,7 @@ conda env create -f environment.yml
 
 # Outline of repository
 
-lib contains code of partial GW solvers, GW-based methods for shape matching and pu-learning.
-lib/unbalanced_gromov is imported from [Unbalanced-GW](https://github.com/thibsej/unbalanced_gromov_wasserstein) and the lib/primal_pgw is imported from [primal-partial-GW](https://github.com/lchapel/partial-GW-for-PU).
+`lib/` contains code of partial GW solvers and GW-based methods for all experiments. See `lib/README.md` for references.
 
 # Numerical experiments
 - Run `shape_matching.ipynb` to see the numerical result of shape matching.

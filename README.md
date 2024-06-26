@@ -1,10 +1,10 @@
-# Installation:
+# Installation
 
 Partial Gromov Wasserstein
 
 Example code for partial Gromov Wasserstein solver. The code reproduces the all the numerical examples in the paper.
 
-# Required package:
+# Required package
 
 We suggest to install [Pytorch](https://pytorch.org/tutorials/beginner/basics/data_tutorial.html), [PythonOT](https://pythonot.github.io/), [scipy](https://scipy.org/),
 [numba](https://numba.pydata.org/numba-doc/dev/reference/numpysupported.html), [sk-learning](https://scikit-learn.org/stable/).

@@ -82,6 +82,7 @@ interpolation/result_save/pgw01_p2_5_1024.pt
 interpolation/result_save/pgw01_p2_10_1024.pt
 interpolation/result_save/pgw01_u_5_1024.pt
 interpolation/result_save/pgw01_u_10_1024.pt
+pu_learniong/
 shape_matching/result/gammas_2d.npz
 shape_matching/result/gammas_2d.pt
 shape_matching/result/gammas_3d.npz

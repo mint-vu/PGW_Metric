@@ -1,7 +1,5 @@
 # Partial Gromov-Wasserstein Metric
 
-This repository contains the accompanying code/experiments for the paper [Partial Gromov-Wasserstein Metric](https://arxiv.org/abs/2402.03664).
-
 
 ## Abstract
 
@@ -29,13 +27,5 @@ conda env create -f environment.yml
 - Run `shape_retrieval/bone_star_exp.ipynb` and `shape_retrieval/synthetic_data_exp.ipynb` to see the results of shape retrieval. 
 
 
-## Citation
 
-```
-@inproceedings{bai2024partialgromovwassersteinmetric,
-      title={Partial Gromov-Wasserstein Metric}, 
-      author={Yikun Bai and Rocio Diaz Martin and Abihith Kothapalli and Hengrong Du and Xinran Liu and Soheil Kolouri},
-      year={2024},
-}
-```
 

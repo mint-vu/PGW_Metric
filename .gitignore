@@ -2,6 +2,8 @@
 __pycache__/
 *.pdf
 *.png
+*.npz
+*.pt
 data/
 .DS_Store
 interpolation/result/pgw_01.pt
@@ -97,3 +99,9 @@ interpolation/result/01_p2_5_1024.npz
 interpolation/result/01_p2_10_1024.npz
 interpolation/result/01_u_5_1024.npz
 interpolation/result/01_u_10_1024.npz
+interpolation/result/0_ot.npz
+interpolation/result/0_pgw.npz
+interpolation/result/0_gw.npz
+interpolation/result/0_ot.npz
+interpolation/result/0_pgw.npz
+interpolation/result/0_gw.npz
